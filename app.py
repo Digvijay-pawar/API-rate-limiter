@@ -27,7 +27,6 @@ def get_request_count(client_identifier):
     request_key = f"request_count:{client_identifier}"
     request_count = redis_client.get(request_key)
     if request_count is None:
-        # If the key doesn't exist, initialize it with 1 and set expiration time (TIME_WINDOW)
         redis_client.setex(request_key, TIME_WINDOW, 1)
         return 1
     return int(request_count)
@@ -46,7 +45,6 @@ def is_rate_limited(client_identifier):
     current_request_count = get_request_count(client_identifier)
     
     if current_request_count > REQUEST_LIMIT:
-        # If the request count exceeds the limit, rate limit the request
         return True
     else:
         increment_request_count(client_identifier)
