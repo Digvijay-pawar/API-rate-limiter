@@ -34,7 +34,7 @@ This project implements an **API rate limiter** using **Flask** and **Redis**, d
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/api-rate-limiter.git
+git clone https://github.com/Digvijay-pawar/api-rate-limiter.git
 cd api-rate-limiter
 ```
 
@@ -87,9 +87,9 @@ This will start the Flask app and Redis service in containers.
 5. **Access the Application**:
    - If using `LoadBalancer` or `NodePort` for Kubernetes service, access the app via the provided external IP or node IP and port.
 
-   Example (using `NodePort` service):
+   Example (using `LoadBalancer` service):
    ```bash
-   http://<node-ip>:30080/api
+   http://localhost/api
    ```
 
 ### **Step 4: Scaling the Application with Kubernetes**
@@ -137,27 +137,3 @@ api-rate-limiter/
 - **Auto-scaling**: Kubernetes can automatically scale the number of Flask app pods based on traffic by adjusting the deployment configuration.
 - **Load Balancing**: Kubernetes ensures that incoming requests are evenly distributed across the available Flask app pods.
 - **Fault Tolerance**: Kubernetes will restart failed pods and maintain application availability.
-
-## **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-### **Contributing**
-
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature-name`).
-3. Commit your changes (`git commit -am 'Add feature'`).
-4. Push to the branch (`git push origin feature-name`).
-5. Open a pull request.
-
----
-
-### **Contact**
-
-If you have any questions or need further information, feel free to reach out to me at:
-
-- **Email**: your.email@example.com
-- **GitHub**: [your-github-profile-link](https://github.com/your-username)
-
